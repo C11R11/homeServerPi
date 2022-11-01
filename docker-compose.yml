@@ -16,3 +16,21 @@ services:
       - /home/pi/plexusb/Series:/tv
       - /home/pi/plexusb/Peliculas:/movies
     restart: unless-stopped
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - WHITELIST=*.*.*.*
+    volumes:
+      - /home/pi/services/transmission:/config
+      - /home/pi/plexusb/downloads:/downloads
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    expose:
+      - 9091
+    restart: unless-stopped
