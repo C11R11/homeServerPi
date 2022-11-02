@@ -27,6 +27,8 @@ services:
     volumes:
       - /home/pi/services/transmission:/config
       - /home/pi/plexusb/downloads:/downloads
+      - /home/pi/plexusb/Series:/tv
+      - /home/pi/plexusb/Peliculas:/movies
     ports:
       - 9091:9091
       - 51413:51413
