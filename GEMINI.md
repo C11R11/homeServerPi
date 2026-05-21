@@ -19,9 +19,10 @@ This repository operates under a **Spec-Driven Development (SDD)** and **GitOps*
 ## 2. Operational Workflow
 1.  **Propose**: Update or create a Markdown file in `specs/` defining the service or infra change.
 2.  **Synthesize**: The **DevOps Engineer** agent reads the spec and updates the `environments/prod/docker-compose.yml`.
-3.  **Validate**: Run syntax and compliance checks (see `.gemini/agentic-skills.md`).
-4.  **Sync**: Execute `scripts/gitops-sync.sh` to reconcile the host state with the repository.
-5.  **Observe**: If a failure occurs, the **SRE Diagnostician** provides an RCA report.
+3.  **Validate Locally**: Execute `scripts/validate-local.sh` to verify the generated configuration against a local `.env` or `.env.example`.
+4.  **Validate SDD Compliance**: Run compliance checks (see `.gemini/agentic-skills.md`).
+5.  **Sync**: Execute `scripts/gitops-sync.sh` to reconcile the host state with the repository.
+6.  **Observe**: If a failure occurs, the **SRE Diagnostician** provides an RCA report.
 
 ## 3. Implementation Constraints
 All implementations MUST adhere to the rules in `.gemini/system-context.md`:

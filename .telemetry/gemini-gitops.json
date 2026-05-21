@@ -89,5 +89,15 @@
     "gen_ai.usage.input_tokens": 12000,
     "gen_ai.usage.reasoning_tokens": 0,
     "gen_ai.usage.output_tokens": 3000
+  },
+  {
+    "timestamp": "2026-05-21T01:15:00Z",
+    "traceId": "local-testing-workflow",
+    "gen_ai.operation.name": "implement-local-validation",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Now I need to add instructions to test the docker-compose stack on local, before push it and deploy. Make the necessary changes to create environments variables or anything needed to accomplish this.",
+    "gen_ai.usage.input_tokens": 10000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 2000
   }
 ]
