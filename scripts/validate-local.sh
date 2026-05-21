@@ -15,4 +15,7 @@ echo "[$(date)] Validating Docker Compose configuration using $ENV_FILE..."
 # Load env variables and run docker compose config
 docker compose --env-file "$ENV_FILE" -f environments/prod/docker-compose.yml config
 
+echo "[$(date)] Auditing Telemetry compliance..."
+./scripts/audit-telemetry.sh
+
 echo "[SUCCESS] Configuration is valid and SDD-compliant."

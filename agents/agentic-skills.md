@@ -15,3 +15,7 @@
 ### 4. `check_ssd_mount`
 - **Command**: `mount | grep "${MOUNT_USB_DRIVE}"`
 - **Goal**: Ensures safety of the physical storage layer.
+
+### 5. `audit_telemetry`
+- **Command**: `./scripts/audit-telemetry.sh`
+- **Goal**: Cross-references GitOps telemetry with native CLI traces to identify protocol violations.

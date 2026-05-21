@@ -58,9 +58,9 @@ EXIT_CODE=$?
 
 # End event
 if [ $EXIT_CODE -eq 0 ]; then
-    log_metrics "COMPLETE" 0 0 0 "null" "null"
+    log_metrics "COMPLETE" "${GEN_AI_INPUT_TOKENS:-0}" "${GEN_AI_REASONING_TOKENS:-0}" "${GEN_AI_OUTPUT_TOKENS:-0}" "${GEN_AI_PROMPT_FILE:-null}" "${GEN_AI_MANUAL_PROMPT:-null}"
 else
-    log_metrics "FAILURE" 0 0 0 "null" "null"
+    log_metrics "FAILURE" "${GEN_AI_INPUT_TOKENS:-0}" "${GEN_AI_REASONING_TOKENS:-0}" "${GEN_AI_OUTPUT_TOKENS:-0}" "${GEN_AI_PROMPT_FILE:-null}" "${GEN_AI_MANUAL_PROMPT:-null}"
 fi
 
 exit $EXIT_CODE
