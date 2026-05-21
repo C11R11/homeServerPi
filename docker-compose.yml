@@ -1,0 +1,28 @@
+services:                                                                                      
+  navidrome:                                                                                   
+    image: deluan/navidrome:latest                                                             
+    user: 1000:1000 # should be owner of volumes                                               
+    ports:                                                                                     
+      - "4533:4533"                                                                            
+    restart: unless-stopped                                                                    
+    #environment:                                                                              
+      # Optional: put your config options customization here. Examples:                        
+      # ND_LOGLEVEL: debug                                                                     
+    volumes:                                                                                   
+      - "/media/usb-media/Music/navidrome/data:/data"                                          
+      - "/media/usb-media/Music:/music:ro
+  yubal:                                                                                       
+      image: ghcr.io/guillevc/yubal:latest                                                       
+      container_name: yubal                                                                      
+      ports:                                                                                     
+        - 4000:8000                                                                              
+      environment:                                                                               
+        PUID: 1000                                                                               
+        PGID: 1000                                                                               
+        YUBAL_SCHEDULER_CRON: "0 0 * * *"                                                        
+        YUBAL_DOWNLOAD_UGC: false                                                                 
+        YUBAL_TZ: UTC                                                                            
+      volumes:                                                                                   
+        - /media/usb-media/Music:/app/data                                                       
+        - ./config:/app/config                                                                   
+      restart: unless-stopped
