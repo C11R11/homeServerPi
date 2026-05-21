@@ -19,4 +19,4 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
-          ansible-playbook -i "${{ secrets.SERVER_IP }}," -u cristian --private-key private_key.pem deploy.yml
+          ansible-playbook -i "${{ secrets.SERVER_IP }}," -u "${{ vars.REMOTE_USER }}" --private-key private_key.pem scripts/deploy-ansible.yml

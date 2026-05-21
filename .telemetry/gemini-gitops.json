@@ -1,0 +1,63 @@
+[
+  {
+    "timestamp": "2026-05-20T23:55:00Z",
+    "traceId": "init-trace-id",
+    "gen_ai.operation.name": "SYSTEM_INIT",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0,
+    "attributes": { "message": "Telemetry system initialized" }
+  },
+  {
+    "timestamp": "2026-05-21T00:05:00Z",
+    "traceId": "session-transition",
+    "gen_ai.operation.name": "scaffold-sdd-infra",
+    "gen_ai.request.prompt_file": "prompts/01. Foundations.md",
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 15000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 4000
+  },
+  {
+    "timestamp": "2026-05-21T00:15:00Z",
+    "traceId": "ansible-alignment-refactor",
+    "gen_ai.operation.name": "ansible-extension-fix",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "please review the ansible file for consistency, file extension errors and others",
+    "gen_ai.usage.input_tokens": 12000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 2500
+  },
+  {
+    "timestamp": "2026-05-21T00:18:00Z",
+    "traceId": "telemetry-mandate-update",
+    "gen_ai.operation.name": "enforce-trace-id-reporting",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Did you make the telemetry entry for last interaction? If you don't please do it, and add a mandatory rule",
+    "gen_ai.usage.input_tokens": 5000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 1500
+  },
+  {
+    "timestamp": "2026-05-21T00:30:00Z",
+    "traceId": "telemetry-audit-enhancement",
+    "gen_ai.operation.name": "enhance-telemetry-auditing",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "I need to add to the telemetry entry the manual prompt detail or prompt file path to auditing",
+    "gen_ai.usage.input_tokens": 10000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 3000
+  },
+  {
+    "timestamp": "2026-05-21T00:40:00Z",
+    "traceId": "workflow-variable-refactor",
+    "gen_ai.operation.name": "workflow-security-hardening",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Now I need to review the github workflow, looking for hardcoded values like the name \"cristian\". Replace all of them with repository variables. And don't forget the telemetry record",
+    "gen_ai.usage.input_tokens": 6000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 1200
+  }
+]

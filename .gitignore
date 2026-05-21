@@ -1,0 +1,26 @@
+# Secrets and Local Configurations
+.env
+.env.prod
+.env.local
+.env.telemetry
+
+# Infrastructure Databases/Cache
+data/
+db/
+*.db
+*.sqlite
+
+# OS and IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Telemetry (EXPLICITLY ALLOWED AND VERSIONED)
+# Do not ignore .telemetry/
+!.telemetry/
+.telemetry/*.log.bak
+
+# Docker/System
+node_modules/
+__pycache__/
+*.log

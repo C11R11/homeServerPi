@@ -1,0 +1,25 @@
+---
+- hosts: all
+  gather_facts: no
+  vars:
+    # Use environment variables for the target path to maintain SDD consistency
+    deploy_path: "/home/cristian/music-stack"
+    compose_src: "../environments/prod/docker-compose.yml"
+
+  tasks:
+    - name: Ensure targeted directory layout exists
+      file:
+        path: "{{ deploy_path }}"
+        state: directory
+
+    - name: Securely copy current Compose blueprint to server
+    # Note: Ansible will look for compose_src relative to this file's location
+      copy:
+        src: "{{ compose_src }}"
+        dest: "{{ deploy_path }}/docker-compose.yml"
+
+    - name: Declaratively bring stack up to matching specification
+      community.docker.docker_compose_v2:
+        project_src: "{{ deploy_path }}"
+        state: present
+        pull: always
