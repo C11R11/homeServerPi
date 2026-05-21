@@ -13,7 +13,8 @@ This repository operates under a **Spec-Driven Development (SDD)** and **GitOps*
     - **Output Tokens** (Generated response)
     - **Prompt File Path** (if applicable)
     - **Manual Prompt Content** (if applicable)
-- **No Metrics, No Deployment**: Synthesis or SRE tasks are considered incomplete and "unverified" if they fail to record these metrics in the versioned `.telemetry/` directory.
+- **Absolute Telemetry Mandate**: Every single agent response MUST include a tool call (e.g., `write_file` or `run_shell_command`) that appends the interaction's metrics to `.telemetry/gemini-gitops.json`. A text-only response is a critical protocol violation.
+- **Resilience**: This mandate applies even if the task is cancelled, fails, or hits a quota. The `scripts/telemetry-logger.sh` wrapper MUST be used for all CLI invocations to ensure a "FAILURE" record is created even if the agent cannot respond.
 
 ## 2. Operational Workflow
 1.  **Propose**: Update or create a Markdown file in `specs/` defining the service or infra change.

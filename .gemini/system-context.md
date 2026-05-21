@@ -15,4 +15,5 @@ All persistent storage MUST use environment variables for the root path.
 2. **Zero-Secrets Policy**: No hardcoded passwords, tokens, or private keys. Use `${VARIABLE}` exclusively.
 3. **Deterministic Restarts**: All services must have `restart: unless-stopped`.
 4. **Volume Mapping**: Always map to the SSD via `${MOUNT_USB_DRIVE}` to prevent SD card wear and overflow.
-5. **Token Metric Enforcement**: Every agent task must terminate by appending its token consumption metrics (Input, Reasoning, Output) to the local `.telemetry/gemini-gitops.log`.
+5. **Token Metric Enforcement**: Every agent response MUST terminate with a tool call updating the local `.telemetry/gemini-gitops.json`. Failure to do so is a system state error.
+6. **Execution Wrapper**: All CLI operations must be wrapped in `scripts/telemetry-logger.sh` to guarantee a log entry even in cases of process-level failure.

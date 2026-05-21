@@ -4,7 +4,7 @@ This schema defines the mandatory metric fields for all agent interactions. All 
 
 ## Mandatory Metric Fields
 - `gen_ai.usage.input_tokens`: Count of tokens sent in the prompt.
-- `gen_ai.usage.reasoning_tokens`: Count of tokens used for model reasoning (if applicable).
+- `gen_ai.usage.reasoning_tokens`: Count of tokens used for model reasoning. **Note**: This value is 0 for Gemini 1.5 Pro as it does not expose a separate reasoning chain; it is reserved for future reasoning-capable models (e.g., Gemini 2.0 Thinking).
 - `gen_ai.usage.output_tokens`: Count of tokens generated in the response.
 
 ## Mandatory Auditing Fields
