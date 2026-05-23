@@ -1,20 +1,23 @@
 ---
-- hosts: all
+- name: Deploy Development Stack
+  hosts: all, localhost
+  connection: "{{ 'local' if inventory_hostname == 'localhost' else 'smart' }}"
   gather_facts: no
+  
   vars:
     # deploy_path MUST be defined in the environment or passed as an extra var
     deploy_path: "{{ lookup('env', 'DEPLOY_PATH') }}"
-    env_dir: "../environments/prod"
-    compose_src: "{{ env_dir }}/docker-compose.yml"
-    env_src: "{{ env_dir }}/.env"
+    compose_src: "docker-compose.yml"
+    env_src: ".env"
 
   tasks:
-    - name: Ensure targeted directory layout exists
+    - name: Ensure development directory exists
       file:
         path: "{{ deploy_path }}"
         state: directory
+        mode: '0755'
 
-    - name: Securely copy current Compose blueprint and environment to server
+    - name: Copy Dev Compose blueprint and environment
       copy:
         src: "{{ item.src }}"
         dest: "{{ deploy_path }}/{{ item.dest }}"
@@ -22,7 +25,7 @@
         - { src: "{{ compose_src }}", dest: "docker-compose.yml" }
         - { src: "{{ env_src }}", dest: ".env" }
 
-    - name: Declaratively bring stack up to matching specification
+    - name: Bring Dev stack up
       community.docker.docker_compose_v2:
         project_src: "{{ deploy_path }}"
         env_files:

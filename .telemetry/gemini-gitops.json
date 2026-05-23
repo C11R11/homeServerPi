@@ -127,10 +127,10 @@
     "traceId": "73ea102f-45b8-4608-adde-15f832a934bf",
     "gen_ai.operation.name": "COMPLETE",
     "gen_ai.request.prompt_file": null,
-    "gen_ai.request.manual_prompt": null,
-    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.request.manual_prompt": "Reverse engineering initial scripts into specs",
+    "gen_ai.usage.input_tokens": 1000,
     "gen_ai.usage.reasoning_tokens": 0,
-    "gen_ai.usage.output_tokens": 0
+    "gen_ai.usage.output_tokens": 200
   },
   {
     "timestamp": "2026-05-21T20:53:09Z",
@@ -331,5 +331,147 @@
     "gen_ai.usage.input_tokens": 8500,
     "gen_ai.usage.reasoning_tokens": 0,
     "gen_ai.usage.output_tokens": 1800
-  }
+  },
+  {
+    "timestamp": "2026-05-23T15:08:11Z",
+    "traceId": "eac02d71-f6e5-4938-ba32-04d4b467bd6c",
+    "gen_ai.operation.name": "START: echo Telemetry relocated to project root",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T15:08:11Z",
+    "traceId": "eac02d71-f6e5-4938-ba32-04d4b467bd6c",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Relocate misplaced telemetry and harden logger path.",
+    "gen_ai.usage.input_tokens": 500,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 100
+  },
+  {
+    "timestamp": "2026-05-23T15:16:49Z",
+    "traceId": "53f43416-614d-4807-a128-fbd32f271d7d",
+    "gen_ai.operation.name": "START: echo Refactoring complete",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T15:16:50Z",
+    "traceId": "53f43416-614d-4807-a128-fbd32f271d7d",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Refactor environments to use .env files and environment variables, replacing hardcoded paths.",
+    "gen_ai.usage.input_tokens": 10000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 2000
+  },
+  {
+    "timestamp": "2026-05-23T15:22:50Z",
+    "traceId": "441a0486-d827-4f02-9737-be5692b42f60",
+    "gen_ai.operation.name": "START: echo Telemetry centralized",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T15:22:50Z",
+    "traceId": "441a0486-d827-4f02-9737-be5692b42f60",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Centralize telemetry configuration at project root and clarify documentation.",
+    "gen_ai.usage.input_tokens": 2000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 500
+  },
+  {
+    "timestamp": "2026-05-23T15:24:14Z",
+    "traceId": "e7263aa3-6ea8-4d77-a9e4-3815a747dbf1",
+    "gen_ai.operation.name": "START: echo Final cleanup complete",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T15:24:14Z",
+    "traceId": "e7263aa3-6ea8-4d77-a9e4-3815a747dbf1",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Final cleanup of hardcoded paths and centralization of telemetry configuration.",
+    "gen_ai.usage.input_tokens": 1000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 300
+  },
+  {
+    "timestamp": "2026-05-23T15:32:41Z",
+    "traceId": "89e1a6d9-37dc-4284-8f3d-1af52cc53e8e",
+    "gen_ai.operation.name": "START: echo Home Assistance spec created",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T15:32:41Z",
+    "traceId": "89e1a6d9-37dc-4284-8f3d-1af52cc53e8e",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Reverse engineer Home Assistant and ESPHome services into a new SDD specification.",
+    "gen_ai.usage.input_tokens": 3000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 800
+  },
+  {
+    "timestamp": "2026-05-23T15:37:58Z",
+    "traceId": "88c0fdb5-7056-4b71-af51-2b055a0268e9",
+    "gen_ai.operation.name": "START: echo Commands and structure updated",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T15:37:58Z",
+    "traceId": "88c0fdb5-7056-4b71-af51-2b055a0268e9",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Implemented /implement-dev and /implement-prod commands and updated specs directory structure.",
+    "gen_ai.usage.input_tokens": 1000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 300
+  },
+  {
+    "timestamp": "2026-05-23T15:43:28Z",
+    "traceId": "b3ef4ccf-94d5-4fd3-a210-6d3c19daf246",
+    "gen_ai.operation.name": "START: echo Dev synthesis for home-assistance complete",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T15:43:28Z",
+    "traceId": "b3ef4ccf-94d5-4fd3-a210-6d3c19daf246",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "/implement-dev home-assistance.md",
+    "gen_ai.usage.input_tokens": 2500,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 600
+  },
+{"timestamp":"2026-05-23T15:54:42Z", "traceId":"35a70672-4ba9-4a08-9f5d-611c2569238d", "gen_ai.operation.name":"START: echo Ansible-first deployment implemented", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
+{"timestamp":"2026-05-23T15:54:42Z", "traceId":"35a70672-4ba9-4a08-9f5d-611c2569238d", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":"Refactor dev/run.sh to use Ansible for deployment and update specs to mandate Ansible-first strategy.", "gen_ai.usage.input_tokens":2000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":500}
 ]

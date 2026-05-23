@@ -4,8 +4,9 @@
 
 set -e
 
-GITOPS_LOG=".telemetry/gemini-gitops.json"
-NATIVE_LOG=".gemini/telemetry.json"
+ROOT_DIR=$(git rev-parse --show-toplevel)
+GITOPS_LOG="$ROOT_DIR/.telemetry/gemini-gitops.json"
+NATIVE_LOG="$ROOT_DIR/.gemini/telemetry.json"
 
 echo "[$(date)] Starting Telemetry Compliance Audit..."
 

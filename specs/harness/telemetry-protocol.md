@@ -1,7 +1,9 @@
 # Global Specification: Agentic Telemetry Protocol (v2.0)
 
 ## Overview
-This specification defines a mandatory, "Metrics-First" and "Self-Reconciling" telemetry protocol for all agentic interactions. It ensures that every response, regardless of success or failure, records high-fidelity usage data that is independently verified against native system logs.
+This specification defines a mandatory, "Metrics-First" and "Self-Reconciling" telemetry protocol for all agentic interactions. It ensures that every response, regardless of success or failure, records high-fidelity usage data that is independently verified against native system logs. 
+
+**Note**: Telemetry is a development and deployment-time lifecycle concern. Configuration files (e.g., `.env.telemetry`) reside at the project root and are not part of the service runtime environments (`environments/`).
 
 ## Mandatory Components
 

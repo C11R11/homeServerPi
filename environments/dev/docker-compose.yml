@@ -1,0 +1,26 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    network_mode: host
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1.5GB
+    volumes:
+      - "${HASS_CONFIG_DIR}:/config"
+      - "/etc/localtime:/etc/localtime:ro"
+
+  esphome:
+    container_name: esphome
+    image: ghcr.io/esphome/esphome
+    network_mode: host
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1.5GB
+    volumes:
+      - "${ESPHOME_CONFIG_DIR}:/config"
+      - "/etc/localtime:/etc/localtime:ro"

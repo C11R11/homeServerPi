@@ -3,7 +3,7 @@
 
 set -e
 
-LOG_FILE=".telemetry/gemini-gitops.json"
+LOG_FILE="$(git rev-parse --show-toplevel)/.telemetry/gemini-gitops.json"
 TRACE_ID=$(cat /proc/sys/kernel/random/uuid 2>/dev/null || echo "manual-$(date +%s)")
 
 log_metrics() {
