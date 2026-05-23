@@ -472,10 +472,68 @@
     "gen_ai.usage.reasoning_tokens": 0,
     "gen_ai.usage.output_tokens": 600
   },
-{"timestamp":"2026-05-23T15:54:42Z", "traceId":"35a70672-4ba9-4a08-9f5d-611c2569238d", "gen_ai.operation.name":"START: echo Ansible-first deployment implemented", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-23T15:54:42Z", "traceId":"35a70672-4ba9-4a08-9f5d-611c2569238d", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":"Refactor dev/run.sh to use Ansible for deployment and update specs to mandate Ansible-first strategy.", "gen_ai.usage.input_tokens":2000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":500},
-{"timestamp":"2026-05-23T15:59:17Z", "traceId":"7155892f-6f90-4199-9a33-61ee5167508b", "gen_ai.operation.name":"START: echo Telemetry compression implemented", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-23T15:59:17Z", "traceId":"7155892f-6f90-4199-9a33-61ee5167508b", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":"Implement telemetry log rotation and compression to respect 100MB limit.", "gen_ai.usage.input_tokens":1500, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":400},
-{"timestamp":"2026-05-23T16:02:06Z", "traceId":"4099411a-ff96-4c17-a836-4aeb6a5afee4", "gen_ai.operation.name":"START: echo Triggering native log rotation", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-23T16:02:10Z", "traceId":"4099411a-ff96-4c17-a836-4aeb6a5afee4", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":"Fix native telemetry tracking and implement dual-stream rotation.", "gen_ai.usage.input_tokens":2000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":500}
+  {
+    "timestamp": "2026-05-23T15:54:42Z",
+    "traceId": "35a70672-4ba9-4a08-9f5d-611c2569238d",
+    "gen_ai.operation.name": "START: echo Ansible-first deployment implemented",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T15:54:42Z",
+    "traceId": "35a70672-4ba9-4a08-9f5d-611c2569238d",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Refactor dev/run.sh to use Ansible for deployment and update specs to mandate Ansible-first strategy.",
+    "gen_ai.usage.input_tokens": 2000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 500
+  },
+  {
+    "timestamp": "2026-05-23T15:59:17Z",
+    "traceId": "7155892f-6f90-4199-9a33-61ee5167508b",
+    "gen_ai.operation.name": "START: echo Telemetry compression implemented",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T15:59:17Z",
+    "traceId": "7155892f-6f90-4199-9a33-61ee5167508b",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Implement telemetry log rotation and compression to respect 100MB limit.",
+    "gen_ai.usage.input_tokens": 1500,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 400
+  },
+  {
+    "timestamp": "2026-05-23T16:02:06Z",
+    "traceId": "4099411a-ff96-4c17-a836-4aeb6a5afee4",
+    "gen_ai.operation.name": "START: echo Triggering native log rotation",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T16:02:10Z",
+    "traceId": "4099411a-ff96-4c17-a836-4aeb6a5afee4",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Fix native telemetry tracking and implement dual-stream rotation.",
+    "gen_ai.usage.input_tokens": 2000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 500
+  },
+{"timestamp":"2026-05-23T19:07:11Z", "traceId":"84459750-d0bb-46b2-b6d8-5672598e1bbd", "gen_ai.operation.name":"START: echo Spec Refiner agent created", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
+{"timestamp":"2026-05-23T19:07:11Z", "traceId":"84459750-d0bb-46b2-b6d8-5672598e1bbd", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":"Implemented Spec Refiner agent and /refine-spec command.", "gen_ai.usage.input_tokens":1000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":300},
+{"timestamp":"2026-05-23T19:24:06Z", "traceId":"e05f575e-4872-4d49-9be1-a2c30e7fa594", "gen_ai.operation.name":"START: echo Bare-metal setup playbook generated", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
+{"timestamp":"2026-05-23T19:24:06Z", "traceId":"e05f575e-4872-4d49-9be1-a2c30e7fa594", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":"/implement-prod bare-metal-layer0.md", "gen_ai.usage.input_tokens":3000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":1000}
 ]
