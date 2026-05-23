@@ -30,6 +30,15 @@ All SDD systems MUST define a dedicated **Telemetry Auditor** agent role respons
 - **Reconciliation Reports**: Generating a discrepancy report if the GitOps stream diverges from the Native stream.
 - **Contract Enforcement**: Blocking deployment or synthesis if the Telemetry Mandate is violated.
 
+### 4. Log Retention & Compression
+To ensure the telemetry storage does not exceed the 100MB system limit:
+- **Scope**: This policy applies to both the GitOps Stream (`.telemetry/gemini-gitops.json`) and the Native Stream (`.gemini/telemetry.json`).
+- **Rotation Threshold**: Any telemetry file MUST be rotated when it exceeds 50MB.
+- **Compression**: Rotated logs MUST be compressed using `gzip` to minimize disk footprint.
+- **Retention Policy**: Maintain up to 5 compressed archives (`.json.1.gz` to `.json.5.gz`) per stream.
+- **Git Mandate**: The Native Stream (`.gemini/telemetry.json`) and its archives MUST NOT be tracked by git to prevent repository bloat.
+- **Implementation**: The `telemetry-logger.sh` wrapper is responsible for triggering rotation checks for both streams.
+
 ## Agent Mandates
 - **Absolute Telemetry Mandate**: No text-only responses. Every interaction MUST include a side-effect tool call to the telemetry logger.
 - **Trace ID Reporting**: Every final response MUST cite the `traceId` generated for that specific interaction.

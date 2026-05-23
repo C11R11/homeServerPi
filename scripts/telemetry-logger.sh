@@ -47,6 +47,40 @@ log_metrics() {
         sed -i '$s/$/,/' "$LOG_FILE"
         printf '%s\n]\n' "$new_entry" >> "$LOG_FILE"
     fi
+
+    rotate_log "$LOG_FILE"
+    
+    # Also rotate native telemetry if it exists
+    NATIVE_LOG="$(git rev-parse --show-toplevel)/.gemini/telemetry.json"
+    if [ -f "$NATIVE_LOG" ]; then
+        rotate_log "$NATIVE_LOG"
+    fi
+}
+
+rotate_log() {
+    local target_file=$1
+    local max_size=52428800 # 50MB
+    local current_size=$(stat -c%s "$target_file" 2>/dev/null || echo 0)
+
+    if [ "$current_size" -gt "$max_size" ]; then
+        echo "[INFO] Rotating $target_file (Size: $((current_size / 1024 / 1024))MB)..."
+        # Shift existing archives (keep up to 5)
+        for i in {4..1}; do
+            if [ -f "$target_file.$i.gz" ]; then
+                mv "$target_file.$i.gz" "$target_file.$((i+1)).gz"
+            fi
+        done
+        
+        # Compress current log and reset
+        gzip -c "$target_file" > "$target_file.1.gz"
+        
+        # For GitOps log, reset to empty array. For others, just clear.
+        if [[ "$target_file" == *"gemini-gitops.json" ]]; then
+            echo "[]" > "$target_file"
+        else
+            cat /dev/null > "$target_file"
+        fi
+    fi
 }
 
 # Initial START event

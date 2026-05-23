@@ -20,6 +20,9 @@ db/
 !.telemetry/
 .telemetry/*.log.bak
 
+# Native Gemini Telemetry (LOCAL ONLY)
+.gemini/telemetry.json*
+
 # Docker/System
 node_modules/
 __pycache__/
