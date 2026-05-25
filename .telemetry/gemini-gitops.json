@@ -532,16 +532,124 @@
     "gen_ai.usage.reasoning_tokens": 0,
     "gen_ai.usage.output_tokens": 500
   },
-{"timestamp":"2026-05-23T19:07:11Z", "traceId":"84459750-d0bb-46b2-b6d8-5672598e1bbd", "gen_ai.operation.name":"START: echo Spec Refiner agent created", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-23T19:07:11Z", "traceId":"84459750-d0bb-46b2-b6d8-5672598e1bbd", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":"Implemented Spec Refiner agent and /refine-spec command.", "gen_ai.usage.input_tokens":1000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":300},
-{"timestamp":"2026-05-23T19:24:06Z", "traceId":"e05f575e-4872-4d49-9be1-a2c30e7fa594", "gen_ai.operation.name":"START: echo Bare-metal setup playbook generated", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-23T19:24:06Z", "traceId":"e05f575e-4872-4d49-9be1-a2c30e7fa594", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":"/implement-prod bare-metal-layer0.md", "gen_ai.usage.input_tokens":3000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":1000},
-{"timestamp":"2026-05-25T04:01:27Z", "traceId":"cc02796e-da0a-4e51-b6e2-e1593aeed6e4", "gen_ai.operation.name":"START: echo Refined bare-metal-layer0 spec", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-25T04:01:27Z", "traceId":"cc02796e-da0a-4e51-b6e2-e1593aeed6e4", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":"/home/cristian/repos/homeServerPi/specs/harness/bare-metal-layer0.md", "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":4200, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":600},
-{"timestamp":"2026-05-25T04:06:44Z", "traceId":"71342ac8-7c63-4964-99a0-2929748240bc", "gen_ai.operation.name":"START: echo Final refinement of bare-metal-layer0 spec", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-25T04:06:44Z", "traceId":"71342ac8-7c63-4964-99a0-2929748240bc", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":"/home/cristian/repos/homeServerPi/specs/harness/bare-metal-layer0.md", "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":5500, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":800},
-{"timestamp":"2026-05-25T04:13:05Z", "traceId":"996c86eb-4ccf-462e-afd2-04df3bcf3202", "gen_ai.operation.name":"START: /home/cristian/repos/homeServerPi/scripts/audit-telemetry.sh", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-25T04:13:05Z", "traceId":"996c86eb-4ccf-462e-afd2-04df3bcf3202", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":3000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":500},
-{"timestamp":"2026-05-25T04:16:47Z", "traceId":"d12bd9e5-0173-4767-872d-35c0b74a0ca0", "gen_ai.operation.name":"START: echo Implemented bare-metal-layer0 (Dev) synthesis", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-25T04:16:47Z", "traceId":"d12bd9e5-0173-4767-872d-35c0b74a0ca0", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":7000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":1200}
+  {
+    "timestamp": "2026-05-23T19:07:11Z",
+    "traceId": "84459750-d0bb-46b2-b6d8-5672598e1bbd",
+    "gen_ai.operation.name": "START: echo Spec Refiner agent created",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T19:07:11Z",
+    "traceId": "84459750-d0bb-46b2-b6d8-5672598e1bbd",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "Implemented Spec Refiner agent and /refine-spec command.",
+    "gen_ai.usage.input_tokens": 1000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 300
+  },
+  {
+    "timestamp": "2026-05-23T19:24:06Z",
+    "traceId": "e05f575e-4872-4d49-9be1-a2c30e7fa594",
+    "gen_ai.operation.name": "START: echo Bare-metal setup playbook generated",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-23T19:24:06Z",
+    "traceId": "e05f575e-4872-4d49-9be1-a2c30e7fa594",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": "/implement-prod bare-metal-layer0.md",
+    "gen_ai.usage.input_tokens": 3000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 1000
+  },
+  {
+    "timestamp": "2026-05-25T04:01:27Z",
+    "traceId": "cc02796e-da0a-4e51-b6e2-e1593aeed6e4",
+    "gen_ai.operation.name": "START: echo Refined bare-metal-layer0 spec",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-25T04:01:27Z",
+    "traceId": "cc02796e-da0a-4e51-b6e2-e1593aeed6e4",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": "/home/cristian/repos/homeServerPi/specs/harness/bare-metal-layer0.md",
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 4200,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 600
+  },
+  {
+    "timestamp": "2026-05-25T04:06:44Z",
+    "traceId": "71342ac8-7c63-4964-99a0-2929748240bc",
+    "gen_ai.operation.name": "START: echo Final refinement of bare-metal-layer0 spec",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-25T04:06:44Z",
+    "traceId": "71342ac8-7c63-4964-99a0-2929748240bc",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": "/home/cristian/repos/homeServerPi/specs/harness/bare-metal-layer0.md",
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 5500,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 800
+  },
+  {
+    "timestamp": "2026-05-25T04:13:05Z",
+    "traceId": "996c86eb-4ccf-462e-afd2-04df3bcf3202",
+    "gen_ai.operation.name": "START: /home/cristian/repos/homeServerPi/scripts/audit-telemetry.sh",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-25T04:13:05Z",
+    "traceId": "996c86eb-4ccf-462e-afd2-04df3bcf3202",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 3000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 500
+  },
+  {
+    "timestamp": "2026-05-25T04:16:47Z",
+    "traceId": "d12bd9e5-0173-4767-872d-35c0b74a0ca0",
+    "gen_ai.operation.name": "START: echo Implemented bare-metal-layer0 (Dev) synthesis",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-25T04:16:47Z",
+    "traceId": "d12bd9e5-0173-4767-872d-35c0b74a0ca0",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 7000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 1200
+  }
 ]

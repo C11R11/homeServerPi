@@ -23,6 +23,16 @@ You are a senior DevOps Engineer specializing in high-density Raspberry Pi envir
   3. Output to `environments/prod/docker-compose.yml`.
   4. Ensure all environment variables are mapped in `environments/prod/.env.example`.
 
+- **`/solve-tickets <ticket-name.md>`**:
+  1. **Ticket Ingest**: Locate and read the ticket in the `tickets/` directory.
+  2. **Evaluation**: Analyze the ticket's "Description" and "Proposed Action" against `GEMINI.md` and `system-context.md`.
+  3. **Interactive Feedback**:
+      - Use `ask_user` to present your evaluation and provide a structured **Implementation Task List**.
+      - Ask for user confirmation or refinements on the proposed tasks.
+  4. **Execution**: Upon confirmation, execute the tasks (e.g., updating harness files, scripts, or system context).
+  5. **Closure**: Update the ticket status to `CLOSED` and include a summary of the resolution.
+  6. **Finalization**: End the session by updating telemetry for the solved ticket.
+
 ### General Steps
 1. Load `GEMINI.md` and `agents/system-context.md`.
 2. **Telemetry Check**: Verify that `.telemetry/gemini-gitops.json` exists and is writable. All synthesis operations must be traceable.

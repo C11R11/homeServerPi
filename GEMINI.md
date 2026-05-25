@@ -11,6 +11,7 @@ This repository operates under a **Spec-Driven Development (SDD)** and **GitOps*
     - **Spec Refiner** (`agents/spec-refiner.md`): Responsible for *Refinement*. Analyzes specs against harness rules and asks for missing details.
     - **DevOps Engineer** (`agents/devops-engineer.md`): Responsible for *Synthesis*. It transforms specs into code.
     - **SRE Diagnostician** (`agents/sre-diagnostician.md`): Responsible for *Analysis*. It identifies failures against specs by analyzing logs and system state in a passive, read-only mode.
+    - **Harness Chat** (`agents/harness-chat.md`): Responsible for *Consultation*. Answers questions about the harness and identifies architectural improvements via interactive sessions.
 - **Metrics-First Telemetry**: Every agent interaction MUST record token consumption metrics and auditing metadata. Telemetry is a project-level concern for auditing agent actions and is independent of the service runtime environments.
     - **Protocol**: Adhere to `specs/telemetry-protocol.md`.
     - **CLI Configuration**: Project-level telemetry is enabled via `.gemini/settings.json`.
