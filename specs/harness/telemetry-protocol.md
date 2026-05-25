@@ -11,11 +11,13 @@ This specification defines a mandatory, "Metrics-First" and "Self-Reconciling" t
 All projects MUST maintain two distinct telemetry streams for reconciliation:
 - **GitOps Stream (`.telemetry/gemini-gitops.json`)**: A versioned, manually-appended JSON array for auditing and PR reviews.
 - **Native Stream (`.gemini/telemetry.json`)**: A machine-generated, high-fidelity trace file produced by the Gemini CLI engine.
+- **Shadow Stream (`.gemini/telemetry-shadow.jsonl`)**: A redundant, JSON-Lines formatted fallback stream maintained by the agent wrapper to ensure continuity if the native engine stalls.
 
 ### 2. The Execution Wrapper (The Logger)
 Every CLI command MUST be wrapped in a telemetry logger (e.g., `scripts/telemetry-logger.sh`).
 - **Trace Continuity**: Must maintain a consistent `traceId` across `START`, `COMPLETE`, and `FAILURE` events for a single interaction.
-- **Metric Extraction**: Must inject token metrics from environment variables (`GEN_AI_INPUT_TOKENS`, `GEN_AI_OUTPUT_TOKENS`) into the GitOps Stream.
+- **Metric Extraction**: Must inject token metrics from environment variables (`GEN_AI_INPUT_TOKENS`, `GEN_AI_OUTPUT_TOKENS`) into the GitOps and Shadow Streams.
+- **Stall Prevention**: To prevent the 100MB native log stall, the logger MUST initialize rotated native logs with a valid JSON object (`{}`).
 
 ### 3. Automated Auditing & Verification
 Every implementation MUST provide a validation script (e.g., `scripts/audit-telemetry.sh`) that performs the following checks:

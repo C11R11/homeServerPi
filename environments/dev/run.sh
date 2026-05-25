@@ -1,6 +1,6 @@
 #!/bin/bash
 # Local execution script for Development environment
-# Usage: ./run.sh [up|down|restart|logs]
+# Usage: ./run.sh [setup|up|down|restart|logs]
 
 COMMAND=${1:-up}
 ENV_FILE=".env"
@@ -13,7 +13,10 @@ fi
 # Load variables from the selected env file for Ansible
 export $(grep -v '^#' "$ENV_FILE" | xargs)
 
-if [ "$COMMAND" == "up" ]; then
+if [ "$COMMAND" == "setup" ]; then
+    echo "[$(date)] Provisioning Bare-Metal Layer 0 via Ansible using $ENV_FILE..."
+    ansible-playbook -i localhost, setup.yml
+elif [ "$COMMAND" == "up" ]; then
     echo "[$(date)] Deploying Development environment via Ansible using $ENV_FILE..."
     ansible-playbook -i localhost, deploy.yml
 else

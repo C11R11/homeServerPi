@@ -1,0 +1,117 @@
+---
+- name: Provision Bare-Metal Layer 0 (Refined)
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  vars:
+    # Required variables passed via --extra-vars or Environment
+    mount_usb_drive: "{{ lookup('env', 'MOUNT_USB_DRIVE') | default(MOUNT_USB_DRIVE, true) }}"
+    ssd_uuid: "{{ lookup('env', 'SSD_UUID') | default(SSD_UUID, true) }}"
+    ssd_format: "{{ lookup('env', 'SSD_FORMAT') | default(SSD_FORMAT, true) | default('ext4') }}"
+    ssh_public_key_path: "{{ lookup('env', 'SSH_PUBLIC_KEY_PATH') | default(SSH_PUBLIC_KEY_PATH, true) }}"
+    target_user: "pi"
+
+  tasks:
+    - name: 1. System Updates
+      apt:
+        update_cache: yes
+        upgrade: dist
+        autoremove: yes
+
+    - name: 2. Storage Provisioning
+      block:
+        - name: Ensure mount point directory exists
+          file:
+            path: "{{ mount_usb_drive }}"
+            state: directory
+            mode: '0755'
+
+        - name: Ensure SSD is formatted
+          filesystem:
+            fstype: "{{ ssd_format }}"
+            dev: "/dev/disk/by-uuid/{{ ssd_uuid }}"
+
+        - name: Mount SSD permanently via fstab
+          mount:
+            path: "{{ mount_usb_drive }}"
+            src: "UUID={{ ssd_uuid }}"
+            fstype: "{{ ssd_format }}"
+            state: mounted
+            opts: defaults,noatime
+
+    - name: 3. Install Dependencies
+      apt:
+        name:
+          - curl
+          - git
+          - htop
+          - ufw
+        state: present
+
+    - name: 4. Docker Engine & Compose Installation
+      block:
+        - name: Install Docker via official script
+          shell: "curl -fsSL https://get.docker.com | sh"
+          args:
+            creates: /usr/bin/docker
+
+        - name: Add target user to docker group
+          user:
+            name: "{{ target_user }}"
+            groups: docker
+            append: yes
+
+        - name: Ensure Docker service is enabled and started
+          systemd:
+            name: docker
+            enabled: yes
+            state: started
+
+    - name: 5. Security - UFW & SSH Hardening
+      block:
+        - name: Set UFW default policies
+          ufw:
+            state: enabled
+            direction: incoming
+            policy: deny
+
+        - name: Allow specified service ports
+          ufw:
+            rule: allow
+            port: "{{ item }}"
+            proto: tcp
+          loop:
+            - '22'   # SSH
+            - '80'   # HTTP
+            - '443'  # HTTPS
+            - '4533' # Navidrome
+            - '4000' # Yubal
+            - '8123' # Home Assistant
+            - '6052' # ESPHome
+
+        - name: Synchronize SSH Authorized Keys
+          authorized_key:
+            user: "{{ target_user }}"
+            state: present
+            key: "{{ lookup('file', ssh_public_key_path) }}"
+
+        - name: Disable password-based authentication
+          lineinfile:
+            path: /etc/ssh/sshd_config
+            regexp: '^#?PasswordAuthentication'
+            line: 'PasswordAuthentication no'
+          notify: restart ssh
+
+        - name: Disable root login
+          lineinfile:
+            path: /etc/ssh/sshd_config
+            regexp: '^#?PermitRootLogin'
+            line: 'PermitRootLogin no'
+          notify: restart ssh
+
+  handlers:
+    - name: restart ssh
+      service:
+        name: ssh
+        state: restarted

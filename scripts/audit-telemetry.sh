@@ -7,6 +7,7 @@ set -e
 ROOT_DIR=$(git rev-parse --show-toplevel)
 GITOPS_LOG="$ROOT_DIR/.telemetry/gemini-gitops.json"
 NATIVE_LOG="$ROOT_DIR/.gemini/telemetry.json"
+SHADOW_LOG="$ROOT_DIR/.gemini/telemetry-shadow.jsonl"
 
 echo "[$(date)] Starting Telemetry Compliance Audit..."
 
@@ -14,6 +15,13 @@ echo "[$(date)] Starting Telemetry Compliance Audit..."
 if ! jq empty "$GITOPS_LOG" 2>/dev/null; then
     echo "[FAILURE] $GITOPS_LOG is not a valid JSON array."
     exit 1
+fi
+
+if [ -f "$SHADOW_LOG" ]; then
+    if ! jq -c . "$SHADOW_LOG" > /dev/null 2>&1; then
+        echo "[FAILURE] $SHADOW_LOG contains invalid JSON lines."
+        exit 1
+    fi
 fi
 
 # 2. Check for Zero-Token Anomalies
