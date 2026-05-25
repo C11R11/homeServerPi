@@ -23,7 +23,7 @@ services:
       PGID: "${PGID}"
       YUBAL_SCHEDULER_CRON: "${YUBAL_SCHEDULER_CRON:-0 0 * * *}"
       YUBAL_DOWNLOAD_UGC: "${YUBAL_DOWNLOAD_UGC:-false}"
-      YUBAL_TZ: "${YUBAL_TZ:-UTC}"j
+      YUBAL_TZ: "${YUBAL_TZ:-UTC}"
     volumes:
       - "${MOUNT_USB_DRIVE}/Music:/app/data"
       - "${MOUNT_USB_DRIVE}/config/yubal:/app/config"
@@ -32,3 +32,27 @@ services:
       resources:
         limits:
           memory: 1GB
+
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - "${HASS_CONFIG_DIR:-${MOUNT_USB_DRIVE}/config/homeassistant}:/config"
+      - "/etc/localtime:/etc/localtime:ro"
+    deploy:
+      resources:
+        limits:
+          memory: 1.5GB
+
+  esphome:
+    image: ghcr.io/esphome/esphome
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - "${ESPHOME_CONFIG_DIR:-${MOUNT_USB_DRIVE}/config/esphome}:/config"
+      - "/etc/localtime:/etc/localtime:ro"
+    deploy:
+      resources:
+        limits:
+          memory: 1.5GB
