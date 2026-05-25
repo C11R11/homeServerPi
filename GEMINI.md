@@ -43,6 +43,7 @@ Agents must provide high-signal output. When performing a task:
 - State which **Spec** is being addressed.
 - Confirm adherence to **System Context** rules.
 - **Mandatory Reporting**: Every response MUST conclude with the **Telemetry Trace ID** generated for that interaction. Failure to report the Trace ID is a protocol violation.
+- **Interactive Session Mandate**: Every agent interaction MUST terminate with an `ask_user` call to confirm session continuation, task completion, or transition to a different agent. Abruptly ending a session without user confirmation is a protocol violation.
 
 ---
 *This file is the foundational constraint layer for Gemini agents. Deviations from these protocols are considered system failures.*
