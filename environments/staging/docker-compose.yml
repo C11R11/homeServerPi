@@ -1,0 +1,58 @@
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    user: "${PUID}:${PGID}"
+    ports:
+      - "4533:4533"
+    restart: unless-stopped
+    volumes:
+      - "${MOUNT_USB_DRIVE}/Music/navidrome/data:/data"
+      - "${MOUNT_USB_DRIVE}/Music:/music:ro"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  yubal:
+    image: ghcr.io/guillevc/yubal:latest
+    container_name: yubal
+    ports:
+      - "8000:8000"
+    environment:
+      PUID: "${PUID}"
+      PGID: "${PGID}"
+      YUBAL_SCHEDULER_CRON: "${YUBAL_SCHEDULER_CRON:-0 0 * * *}"
+      YUBAL_DOWNLOAD_UGC: "${YUBAL_DOWNLOAD_UGC:-false}"
+      YUBAL_TZ: "${YUBAL_TZ:-UTC}"
+    volumes:
+      - "${MOUNT_USB_DRIVE}/Music:/app/data"
+      - "${MOUNT_USB_DRIVE}/config/yubal:/app/config"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - "${HASS_CONFIG_DIR:-${MOUNT_USB_DRIVE}/config/homeassistant}:/config"
+      - "/etc/localtime:/etc/localtime:ro"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  esphome:
+    image: ghcr.io/esphome/esphome
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - "${ESPHOME_CONFIG_DIR:-${MOUNT_USB_DRIVE}/config/esphome}:/config"
+      - "/etc/localtime:/etc/localtime:ro"
+    deploy:
+      resources:
+        limits:
+          memory: 512M

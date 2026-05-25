@@ -652,12 +652,110 @@
     "gen_ai.usage.reasoning_tokens": 0,
     "gen_ai.usage.output_tokens": 1200
   },
-{"timestamp":"2026-05-25T17:43:19Z", "traceId":"6c3eaf0f-1f3c-45c5-b61e-24d71da62468", "gen_ai.operation.name":"START: true", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-25T17:43:19Z", "traceId":"6c3eaf0f-1f3c-45c5-b61e-24d71da62468", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":"agents/devops-engineer.md", "gen_ai.request.manual_prompt":"/implement-prod", "gen_ai.usage.input_tokens":4500, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":600},
-{"timestamp":"2026-05-25T17:46:49Z", "traceId":"51682850-e592-4778-bc9e-937d8ffea9e7", "gen_ai.operation.name":"START: true", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-25T17:46:49Z", "traceId":"51682850-e592-4778-bc9e-937d8ffea9e7", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":"GEMINI.md", "gen_ai.request.manual_prompt":"Fix missing scripts/gitops-sync.sh in harness", "gen_ai.usage.input_tokens":1500, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":300},
-{"timestamp":"2026-05-25T17:55:22Z", "traceId":"5bd0b710-7f02-4b35-b27b-25f2cf3a8591", "gen_ai.operation.name":"START: true", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-25T17:55:22Z", "traceId":"5bd0b710-7f02-4b35-b27b-25f2cf3a8591", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":"agents/spec-refiner.md", "gen_ai.request.manual_prompt":"Update /write-spec protocol with folder selection", "gen_ai.usage.input_tokens":3000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":500},
-{"timestamp":"2026-05-25T18:18:42Z", "traceId":"a6fa9175-d63a-43b3-b2f2-af0adfe230d7", "gen_ai.operation.name":"START: true", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
-{"timestamp":"2026-05-25T18:18:42Z", "traceId":"a6fa9175-d63a-43b3-b2f2-af0adfe230d7", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":"agents/spec-refiner.md", "gen_ai.request.manual_prompt":"Propose /write-spec changes in text mode for feedback", "gen_ai.usage.input_tokens":3500, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":600}
+  {
+    "timestamp": "2026-05-25T17:43:19Z",
+    "traceId": "6c3eaf0f-1f3c-45c5-b61e-24d71da62468",
+    "gen_ai.operation.name": "START: true",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-25T17:43:19Z",
+    "traceId": "6c3eaf0f-1f3c-45c5-b61e-24d71da62468",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": "agents/devops-engineer.md",
+    "gen_ai.request.manual_prompt": "/implement-prod",
+    "gen_ai.usage.input_tokens": 4500,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 600
+  },
+  {
+    "timestamp": "2026-05-25T17:46:49Z",
+    "traceId": "51682850-e592-4778-bc9e-937d8ffea9e7",
+    "gen_ai.operation.name": "START: true",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-25T17:46:49Z",
+    "traceId": "51682850-e592-4778-bc9e-937d8ffea9e7",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": "GEMINI.md",
+    "gen_ai.request.manual_prompt": "Fix missing scripts/gitops-sync.sh in harness",
+    "gen_ai.usage.input_tokens": 1500,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 300
+  },
+  {
+    "timestamp": "2026-05-25T17:55:22Z",
+    "traceId": "5bd0b710-7f02-4b35-b27b-25f2cf3a8591",
+    "gen_ai.operation.name": "START: true",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-25T17:55:22Z",
+    "traceId": "5bd0b710-7f02-4b35-b27b-25f2cf3a8591",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": "agents/spec-refiner.md",
+    "gen_ai.request.manual_prompt": "Update /write-spec protocol with folder selection",
+    "gen_ai.usage.input_tokens": 3000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 500
+  },
+  {
+    "timestamp": "2026-05-25T18:18:42Z",
+    "traceId": "a6fa9175-d63a-43b3-b2f2-af0adfe230d7",
+    "gen_ai.operation.name": "START: true",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-25T18:18:42Z",
+    "traceId": "a6fa9175-d63a-43b3-b2f2-af0adfe230d7",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": "agents/spec-refiner.md",
+    "gen_ai.request.manual_prompt": "Propose /write-spec changes in text mode for feedback",
+    "gen_ai.usage.input_tokens": 3500,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 600
+  },
+  {
+    "timestamp": "2026-05-25T20:07:06Z",
+    "traceId": "260b5d0e-caaf-41bc-bc50-ace7d51f2a7c",
+    "gen_ai.operation.name": "START: true",
+    "gen_ai.request.prompt_file": null,
+    "gen_ai.request.manual_prompt": null,
+    "gen_ai.usage.input_tokens": 0,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 0
+  },
+  {
+    "timestamp": "2026-05-25T20:07:08Z",
+    "traceId": "260b5d0e-caaf-41bc-bc50-ace7d51f2a7c",
+    "gen_ai.operation.name": "COMPLETE",
+    "gen_ai.request.prompt_file": "agents/spec-refiner.md",
+    "gen_ai.request.manual_prompt": "/write-spec staging-environment",
+    "gen_ai.usage.input_tokens": 5000,
+    "gen_ai.usage.reasoning_tokens": 0,
+    "gen_ai.usage.output_tokens": 800
+  },
+{"timestamp":"2026-05-25T20:13:09Z", "traceId":"56633a6c-13b8-4016-8dda-3b2cc7174e21", "gen_ai.operation.name":"START: true", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
+{"timestamp":"2026-05-25T20:13:09Z", "traceId":"56633a6c-13b8-4016-8dda-3b2cc7174e21", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":"agents/spec-refiner.md", "gen_ai.request.manual_prompt":"/refine-spec staging-environment.md and protocol update", "gen_ai.usage.input_tokens":4000, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":700},
+{"timestamp":"2026-05-25T20:16:04Z", "traceId":"75782bbf-acc4-4cc5-a0ae-ffbc3c478a74", "gen_ai.operation.name":"START: true", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
+{"timestamp":"2026-05-25T20:16:04Z", "traceId":"75782bbf-acc4-4cc5-a0ae-ffbc3c478a74", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":"agents/devops-engineer.md", "gen_ai.request.manual_prompt":"Add /implement-staging trigger to harness and agent", "gen_ai.usage.input_tokens":1500, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":300},
+{"timestamp":"2026-05-25T20:17:45Z", "traceId":"5208e2d5-30c2-4976-8502-b126b64b8da7", "gen_ai.operation.name":"START: true", "gen_ai.request.prompt_file":null, "gen_ai.request.manual_prompt":null, "gen_ai.usage.input_tokens":0, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":0},
+{"timestamp":"2026-05-25T20:17:46Z", "traceId":"5208e2d5-30c2-4976-8502-b126b64b8da7", "gen_ai.operation.name":"COMPLETE", "gen_ai.request.prompt_file":"agents/devops-engineer.md", "gen_ai.request.manual_prompt":"/implement-staging", "gen_ai.usage.input_tokens":3500, "gen_ai.usage.reasoning_tokens":0, "gen_ai.usage.output_tokens":1200}
 ]

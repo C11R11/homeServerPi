@@ -1,0 +1,62 @@
+---
+- name: Provision Staging Sandbox (MACVLAN Virtual IP)
+  hosts: localhost
+  connection: local
+  become: yes
+
+  vars:
+    sandbox_name: "sdd-staging-sandbox"
+    image: "jrei/systemd-ubuntu:24.04"
+    staging_ip: "{{ lookup('env', 'STAGING_IP') | default('192.168.1.50', true) }}"
+    staging_gateway: "{{ lookup('env', 'STAGING_GATEWAY') | default('192.168.1.1', true) }}"
+    staging_subnet: "{{ lookup('env', 'STAGING_SUBNET') | default('192.168.1.0/24', true) }}"
+    parent_interface: "{{ lookup('env', 'STAGING_INTERFACE') | default('eth0', true) }}"
+    mount_usb_drive: "{{ lookup('env', 'MOUNT_USB_DRIVE') | default('/media/usb-media', true) }}"
+
+  tasks:
+    - name: 1. Ensure Staging Simulation Dirs exist on Host
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0755'
+      loop:
+        - "{{ mount_usb_drive }}/staging/data"
+        - "{{ mount_usb_drive }}/staging/config"
+
+    - name: 2. Create MACVLAN network for Sandbox
+      docker_network:
+        name: staging_macvlan
+        driver: macvlan
+        driver_options:
+          parent: "{{ parent_interface }}"
+        ipam_config:
+          - subnet: "{{ staging_subnet }}"
+            gateway: "{{ staging_gateway }}"
+        state: present
+
+    - name: 3. Start Ephemeral Sandbox Container
+      docker_container:
+        name: "{{ sandbox_name }}"
+        image: "{{ image }}"
+        privileged: yes
+        restart_policy: "no"
+        memory: 2G
+        networks:
+          - name: staging_macvlan
+            ipv4_address: "{{ staging_ip }}"
+        volumes:
+          - "{{ mount_usb_drive }}/staging:/media/usb-media/staging"
+          - "/var/run/docker.sock:/var/run/docker.sock"
+          - "{{ playbook_dir }}/..:/repo:ro"
+        state: started
+
+    - name: 4. Wait for Sandbox systemd initialization
+      pause:
+        seconds: 5
+
+    - name: 5. Basic Hardening/Prep inside Sandbox (Simulated)
+      shell: |
+        docker exec {{ sandbox_name }} apt-get update
+        docker exec {{ sandbox_name }} apt-get install -y curl docker.io
+      register: sandbox_prep
+      changed_when: "'newly installed' in sandbox_prep.stdout"

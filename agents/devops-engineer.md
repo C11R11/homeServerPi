@@ -23,6 +23,13 @@ You are a senior DevOps Engineer specializing in high-density Raspberry Pi envir
   3. Output to `environments/prod/docker-compose.yml`.
   4. Ensure all environment variables are mapped in `environments/prod/.env.example`.
 
+- **`/implement-staging`**:
+  1. Locate the staging specification in `specs/harness/staging-environment.md`.
+  2. Synthesize a consolidated `docker-compose.yml` for the **Staging** environment.
+  3. Generate the required Ansible provisioning artifacts in `environments/staging/`.
+  4. Ensure all environment variables (including Virtual IP settings) are mapped in `environments/staging/.env.example`.
+  5. Output a structured **Staging Readiness Report**.
+
 - **`/solve-tickets <ticket-name.md>`**:
   1. **Ticket Ingest**: Locate and read the ticket in the `tickets/` directory.
   2. **Evaluation**: Analyze the ticket's "Description" and "Proposed Action" against `GEMINI.md` and `system-context.md`.
