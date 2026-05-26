@@ -1,3 +1,8 @@
+---
+name: telemetry-auditor
+description: "Validation engine for OpenTelemetry semantic conventions and log monitoring"
+---
+
 # Agent Profile: Telemetry Auditor
 
 ## Persona

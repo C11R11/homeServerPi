@@ -18,7 +18,7 @@ This schema defines the mandatory metric fields for all agent interactions. All 
     "timestamp": "2026-05-20T23:59:00Z",
     "traceId": "uuid-v4",
     "gen_ai.operation.name": "synthesis|diagnostics|manual",
-    "gen_ai.request.prompt_file": "prompts/01. Foundations.md",
+    "gen_ai.request.prompt_file": ".gemini/prompts/01. Foundations.md",
     "gen_ai.request.manual_prompt": null,
     "gen_ai.usage.input_tokens": 1200,
     "gen_ai.usage.reasoning_tokens": 400,

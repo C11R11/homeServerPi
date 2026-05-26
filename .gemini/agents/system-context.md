@@ -1,3 +1,8 @@
+---
+name: system-context
+description: "Hardware parameters, storage maps, and baseline system constraints"
+---
+
 # SDD System Context: homeServerPi
 
 ## Hardware Baseline

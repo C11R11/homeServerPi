@@ -20,8 +20,13 @@ db/
 !.telemetry/
 .telemetry/*.log.bak
 
-# Native Gemini Telemetry (LOCAL ONLY)
+# Native Gemini Telemetry & Metadata (CONSOLIDATED)
+# Allow agents, prompts, and tickets in .gemini/ to be tracked
+!.gemini/agents/
+!.gemini/prompts/
+!.gemini/tickets/
 .gemini/telemetry.json*
+.gemini/telemetry-shadow.jsonl
 
 # Docker/System
 node_modules/

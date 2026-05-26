@@ -50,4 +50,4 @@ To ensure the telemetry storage does not exceed the 100MB system limit:
 1. **Initialize Streams**: Configure `.gemini/settings.json` for native tracing and create `.telemetry/gemini-gitops.json`.
 2. **Deploy Logger**: Install `scripts/telemetry-logger.sh`.
 3. **Deploy Auditor**: Install `scripts/audit-telemetry.sh` and integrate into `scripts/validate-local.sh`.
-4. **Agent Profile**: Update agent profiles (e.g., `agents/sre-diagnostician.md`) to include the **Protocol Auditor** responsibility.
+4. **Agent Profile**: Update agent profiles (e.g., `.gemini/agents/sre-diagnostician.md`) to include the **Protocol Auditor** responsibility.

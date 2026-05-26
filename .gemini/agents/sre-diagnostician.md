@@ -1,3 +1,8 @@
+---
+name: devops-engineer
+description: "Senior DevOps Engineer expert for system context synthesis and infrastructure compilation"
+---
+
 # Agent Profile: SRE Diagnostician
 
 ## Persona

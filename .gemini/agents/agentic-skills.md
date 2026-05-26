@@ -1,3 +1,8 @@
+---
+name: agentic-skills
+description: "Command definitions and execution limits for system capabilities"
+---
+
 # Agentic Skills: homeServerPi
 
 ### 1. `validate_compose_syntax`
